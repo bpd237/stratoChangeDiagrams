@@ -1,0 +1,93 @@
+[
+  {
+    "id": 0,
+    "nom": "amet",
+    "type": 2,
+    "niveau_influence": 2,
+    "niveau_implication": 3
+  },
+  {
+    "id": 1,
+    "nom": "tempor",
+    "type": 2,
+    "niveau_influence": 4,
+    "niveau_implication": 2
+  },
+  {
+    "id": 2,
+    "nom": "eiusmod",
+    "type": 1,
+    "niveau_influence": 4,
+    "niveau_implication": 1
+  },
+  {
+    "id": 3,
+    "nom": "ex",
+    "type": 3,
+    "niveau_influence": 1,
+    "niveau_implication": 1
+  },
+  {
+    "id": 4,
+    "nom": "id",
+    "type": 2,
+    "niveau_influence": 3,
+    "niveau_implication": 1
+  },
+  {
+    "id": 5,
+    "nom": "velit",
+    "type": 1,
+    "niveau_influence": 1,
+    "niveau_implication": 2
+  },
+  {
+    "id": 6,
+    "nom": "anim",
+    "type": 2,
+    "niveau_influence": 4,
+    "niveau_implication": 2
+  },
+  {
+    "id": 7,
+    "nom": "nostrud",
+    "type": 1,
+    "niveau_influence": 1,
+    "niveau_implication": 2
+  },
+  {
+    "id": 8,
+    "nom": "duis",
+    "type": 1,
+    "niveau_influence": 3,
+    "niveau_implication": 1
+  },
+  {
+    "id": 9,
+    "nom": "proident",
+    "type": 2,
+    "niveau_influence": 1,
+    "niveau_implication": 2
+  },
+  {
+    "id": 10,
+    "nom": "ad",
+    "type": 3,
+    "niveau_influence": 1,
+    "niveau_implication": 2
+  },
+  {
+    "id": 11,
+    "nom": "minim",
+    "type": 3,
+    "niveau_influence": 4,
+    "niveau_implication": 1
+  },
+  {
+    "id": 12,
+    "nom": "nostrud",
+    "type": 1,
+    "niveau_influence": 1,
+    "niveau_implication": 2
+  }
+]

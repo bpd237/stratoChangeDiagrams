@@ -1,0 +1,408 @@
+[
+  {
+    "id": 0,
+    "nom": "quis",
+    "type": 1,
+    "niveau_influence": 2,
+    "niveau_implication": 2
+  },
+  {
+    "id": 1,
+    "nom": "eiusmod",
+    "type": 3,
+    "niveau_influence": 4,
+    "niveau_implication": 3
+  },
+  {
+    "id": 2,
+    "nom": "elit",
+    "type": 1,
+    "niveau_influence": 1,
+    "niveau_implication": 3
+  },
+  {
+    "id": 3,
+    "nom": "sit",
+    "type": 1,
+    "niveau_influence": 4,
+    "niveau_implication": 2
+  },
+  {
+    "id": 4,
+    "nom": "exercitation",
+    "type": 2,
+    "niveau_influence": 2,
+    "niveau_implication": 1
+  },
+  {
+    "id": 5,
+    "nom": "nostrud",
+    "type": 1,
+    "niveau_influence": 4,
+    "niveau_implication": 3
+  },
+  {
+    "id": 6,
+    "nom": "ea",
+    "type": 3,
+    "niveau_influence": 3,
+    "niveau_implication": 2
+  },
+  {
+    "id": 7,
+    "nom": "cupidatat",
+    "type": 1,
+    "niveau_influence": 1,
+    "niveau_implication": 1
+  },
+  {
+    "id": 8,
+    "nom": "ex",
+    "type": 2,
+    "niveau_influence": 3,
+    "niveau_implication": 2
+  },
+  {
+    "id": 9,
+    "nom": "in",
+    "type": 3,
+    "niveau_influence": 4,
+    "niveau_implication": 2
+  },
+  {
+    "id": 10,
+    "nom": "consequat",
+    "type": 1,
+    "niveau_influence": 4,
+    "niveau_implication": 2
+  },
+  {
+    "id": 11,
+    "nom": "et",
+    "type": 3,
+    "niveau_influence": 1,
+    "niveau_implication": 3
+  },
+  {
+    "id": 12,
+    "nom": "nostrud",
+    "type": 2,
+    "niveau_influence": 3,
+    "niveau_implication": 2
+  },
+  {
+    "id": 13,
+    "nom": "enim",
+    "type": 3,
+    "niveau_influence": 4,
+    "niveau_implication": 3
+  },
+  {
+    "id": 14,
+    "nom": "fugiat",
+    "type": 3,
+    "niveau_influence": 2,
+    "niveau_implication": 2
+  },
+  {
+    "id": 15,
+    "nom": "velit",
+    "type": 1,
+    "niveau_influence": 4,
+    "niveau_implication": 1
+  },
+  {
+    "id": 16,
+    "nom": "cupidatat",
+    "type": 1,
+    "niveau_influence": 3,
+    "niveau_implication": 2
+  },
+  {
+    "id": 17,
+    "nom": "elit",
+    "type": 1,
+    "niveau_influence": 3,
+    "niveau_implication": 3
+  },
+  {
+    "id": 18,
+    "nom": "aute",
+    "type": 2,
+    "niveau_influence": 4,
+    "niveau_implication": 2
+  },
+  {
+    "id": 19,
+    "nom": "non",
+    "type": 3,
+    "niveau_influence": 4,
+    "niveau_implication": 3
+  },
+  {
+    "id": 20,
+    "nom": "eu",
+    "type": 2,
+    "niveau_influence": 4,
+    "niveau_implication": 1
+  },
+  {
+    "id": 21,
+    "nom": "esse",
+    "type": 1,
+    "niveau_influence": 3,
+    "niveau_implication": 2
+  },
+  {
+    "id": 22,
+    "nom": "nulla",
+    "type": 2,
+    "niveau_influence": 2,
+    "niveau_implication": 3
+  },
+  {
+    "id": 23,
+    "nom": "sit",
+    "type": 3,
+    "niveau_influence": 3,
+    "niveau_implication": 1
+  },
+  {
+    "id": 24,
+    "nom": "mollit",
+    "type": 2,
+    "niveau_influence": 3,
+    "niveau_implication": 1
+  },
+  {
+    "id": 25,
+    "nom": "dolor",
+    "type": 2,
+    "niveau_influence": 4,
+    "niveau_implication": 1
+  },
+  {
+    "id": 26,
+    "nom": "magna",
+    "type": 1,
+    "niveau_influence": 3,
+    "niveau_implication": 1
+  },
+  {
+    "id": 27,
+    "nom": "aute",
+    "type": 3,
+    "niveau_influence": 4,
+    "niveau_implication": 2
+  },
+  {
+    "id": 28,
+    "nom": "enim",
+    "type": 2,
+    "niveau_influence": 4,
+    "niveau_implication": 3
+  },
+  {
+    "id": 29,
+    "nom": "veniam",
+    "type": 2,
+    "niveau_influence": 2,
+    "niveau_implication": 2
+  },
+  {
+    "id": 30,
+    "nom": "ad",
+    "type": 2,
+    "niveau_influence": 2,
+    "niveau_implication": 3
+  },
+  {
+    "id": 31,
+    "nom": "id",
+    "type": 3,
+    "niveau_influence": 1,
+    "niveau_implication": 2
+  },
+  {
+    "id": 32,
+    "nom": "et",
+    "type": 2,
+    "niveau_influence": 2,
+    "niveau_implication": 3
+  },
+  {
+    "id": 33,
+    "nom": "ipsum",
+    "type": 2,
+    "niveau_influence": 4,
+    "niveau_implication": 1
+  },
+  {
+    "id": 34,
+    "nom": "ad",
+    "type": 2,
+    "niveau_influence": 4,
+    "niveau_implication": 2
+  },
+  {
+    "id": 35,
+    "nom": "quis",
+    "type": 1,
+    "niveau_influence": 2,
+    "niveau_implication": 3
+  },
+  {
+    "id": 36,
+    "nom": "minim",
+    "type": 3,
+    "niveau_influence": 4,
+    "niveau_implication": 3
+  },
+  {
+    "id": 37,
+    "nom": "eu",
+    "type": 2,
+    "niveau_influence": 1,
+    "niveau_implication": 2
+  },
+  {
+    "id": 38,
+    "nom": "qui",
+    "type": 1,
+    "niveau_influence": 3,
+    "niveau_implication": 2
+  },
+  {
+    "id": 39,
+    "nom": "occaecat",
+    "type": 1,
+    "niveau_influence": 2,
+    "niveau_implication": 3
+  },
+  {
+    "id": 40,
+    "nom": "aute",
+    "type": 3,
+    "niveau_influence": 4,
+    "niveau_implication": 3
+  },
+  {
+    "id": 41,
+    "nom": "Lorem",
+    "type": 3,
+    "niveau_influence": 2,
+    "niveau_implication": 1
+  },
+  {
+    "id": 42,
+    "nom": "nulla",
+    "type": 3,
+    "niveau_influence": 1,
+    "niveau_implication": 1
+  },
+  {
+    "id": 43,
+    "nom": "dolore",
+    "type": 1,
+    "niveau_influence": 3,
+    "niveau_implication": 1
+  },
+  {
+    "id": 44,
+    "nom": "ea",
+    "type": 1,
+    "niveau_influence": 4,
+    "niveau_implication": 2
+  },
+  {
+    "id": 45,
+    "nom": "cillum",
+    "type": 3,
+    "niveau_influence": 3,
+    "niveau_implication": 1
+  },
+  {
+    "id": 46,
+    "nom": "ullamco",
+    "type": 1,
+    "niveau_influence": 1,
+    "niveau_implication": 1
+  },
+  {
+    "id": 47,
+    "nom": "magna",
+    "type": 1,
+    "niveau_influence": 1,
+    "niveau_implication": 1
+  },
+  {
+    "id": 48,
+    "nom": "fugiat",
+    "type": 3,
+    "niveau_influence": 3,
+    "niveau_implication": 2
+  },
+  {
+    "id": 49,
+    "nom": "consequat",
+    "type": 1,
+    "niveau_influence": 3,
+    "niveau_implication": 2
+  },
+  {
+    "id": 50,
+    "nom": "ea",
+    "type": 2,
+    "niveau_influence": 3,
+    "niveau_implication": 1
+  },
+  {
+    "id": 51,
+    "nom": "anim",
+    "type": 2,
+    "niveau_influence": 4,
+    "niveau_implication": 1
+  },
+  {
+    "id": 52,
+    "nom": "eiusmod",
+    "type": 3,
+    "niveau_influence": 3,
+    "niveau_implication": 2
+  },
+  {
+    "id": 53,
+    "nom": "sunt",
+    "type": 1,
+    "niveau_influence": 3,
+    "niveau_implication": 1
+  },
+  {
+    "id": 54,
+    "nom": "officia",
+    "type": 1,
+    "niveau_influence": 1,
+    "niveau_implication": 3
+  },
+  {
+    "id": 55,
+    "nom": "dolor",
+    "type": 2,
+    "niveau_influence": 1,
+    "niveau_implication": 3
+  },
+  {
+    "id": 56,
+    "nom": "sunt",
+    "type": 2,
+    "niveau_influence": 4,
+    "niveau_implication": 1
+  },
+  {
+    "id": 57,
+    "nom": "consectetur",
+    "type": 2,
+    "niveau_influence": 3,
+    "niveau_implication": 1
+  }
+]

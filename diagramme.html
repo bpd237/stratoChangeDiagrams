@@ -1,0 +1,1670 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Diagramme</title>
+		
+		<meta charset="utf-8">
+
+    	<link rel="stylesheet" href="animate.css-3.7.2/animate.min.css">
+		<link rel="stylesheet" type="text/css" href="normalize.css-8.0.1/normalize.css">
+		<link rel="stylesheet" type="text/css" href="main.css">
+	</head>
+	
+	<body>
+		<div class="c-container">
+			<div class="c-content-container">
+				<div class="c-content c-active" dataValue="1">
+					<h3 class="c-title animated fadeInLeft"> Diagramme 1 :: Parties Prenantes à Influence Directe</h3>
+					<canvas class="animated bounce" id="canvas1" width="600" height="600">Votre navigateur est trop vieux</canvas>
+				</div>
+				<div class="c-content" dataValue="2">
+					<h3 class="c-title animated fadeInLeft"> Diagramme 2 :: Parties Prenantes à Influcence Assez Directe</h3>
+					<canvas class="animated bounce" id="canvas2" width="600" height="600">Votre navigateur est trop vieux</canvas>
+				</div>
+				<div class="c-content" dataValue="3">
+					<h3 class="c-title animated fadeInLeft"> Diagramme 3 :: Parties Prenantes à Influence Peu Directe</h3>
+					<canvas class="animated bounce" id="canvas3" width="600" height="600">Votre navigateur est trop vieux</canvas>
+				</div>
+				<div class="c-content" dataValue="4">
+					<h3 class="c-title animated fadeInLeft"> Diagramme 4 :: Parties Prenantes à Influence Indirecte</h3>
+					<canvas class="animated bounce" id="canvas4" width="600" height="600">Votre navigateur est trop vieux</canvas>
+				</div>
+				<div class="c-content" dataValue="5">
+					<h3 class="c-title animated fadeInLeft"> Diagramme 5 :: Parties Prenantes Engagées</h3>
+					<canvas class="animated bounce" id="canvas5" width="600" height="600">Votre navigateur est trop vieux</canvas>
+				</div>
+				<div class="c-content" dataValue="6">
+					<h3 class="c-title animated fadeInLeft"> Diagramme 6 :: Parties Prenantes Peu Engagées</h3>
+					<canvas class="animated bounce" id="canvas6" width="600" height="600">Votre navigateur est trop vieux</canvas>
+				</div>
+				<div class="c-content" dataValue="7">
+					<h3 class="c-title animated fadeInLeft"> Diagramme 7 :: Parties Prenantes Indécis</h3>
+					<canvas class="animated bounce" id="canvas7" width="600" height="600">Votre navigateur est trop vieux</canvas>
+				</div>
+				<div class="c-content" dataValue="8">
+					<h3 class="c-title animated fadeInLeft"> Diagramme Général pour toutes les parties prenantes </h3>
+					<canvas class="animated bounce" id="canvas8" width="600" height="600">Votre navigateur est trop vieux</canvas>
+				</div>
+			</div>
+			<div class="directions">
+				<span class="btn animated fadeInLeft left">&lt;</span>	
+				<span class="btn animated fadeInRight right">&gt;</span>	
+			</div>
+			<div class="c-content-legend animated fadeInRight">
+				<h3 class="special-title">Légende</h3>
+				<div class="elt-legend">
+					<span class="elt-representation red-fourth">PPIA</span><span class="elt-text">Partie Prenante Institutionnelle Auxilière</span>
+				</div><hr>
+				<div class="elt-legend">
+					<span class="elt-representation red-first">PPID</span><span class="elt-text">Partie Prenante Institutionnelle Décisive</span>
+				</div><hr>
+				<div class="elt-legend">
+					<span class="elt-representation green-fourth">PPNII</span><span class="elt-text">Partie Prenante Non Institutionnelle Indirecte</span>
+				</div><hr>
+				<div class="elt-legend">
+					<span class="elt-representation green-first">PPNID</span><span class="elt-text">Partie Prenante Non Institutionnelle Directe</span>
+				</div><hr>
+				<div class="elt-legend">
+					<span class="elt-representation yellow-fourth">PTFS</span><span class="elt-text">Partenaire Technique et Financier Secondaire</span>
+				</div><hr>
+				<div class="elt-legend">
+					<span class="elt-representation yellow-first">PTFD</span><span class="elt-text">Partenaire Technique et Financier Déterminant</span>
+				</div><hr>
+				<div class="elt-legend">
+					<span class="elt-representation"></span><span class="up">+</span> <span class="elt-text">Partie Prenante Engagée</span>
+				</div><hr>
+				<div class="elt-legend">
+					<span class="elt-representation"></span><span class="up">-</span> <span class="elt-text">Partie Prenante Peu Engagée</span>
+				</div><hr>
+				<div class="elt-legend">
+					<span class="elt-representation"></span><span class="up">!</span> <span class="elt-text">Partie Prenante Indécise</span>
+				</div>
+			</div>
+		</div>
+	</body>
+
+	<script type="text/javascript" src="main.js"></script>
+	<script type="text/javascript">
+        // Variables principales
+	        let items = [
+				  {
+				    "id": 0,
+				    "nom": "quis",
+				    "type": 1,
+				    "niveau_influence": 2,
+				    "niveau_implication": 2
+				  },
+				  {
+				    "id": 1,
+				    "nom": "eiusmod",
+				    "type": 3,
+				    "niveau_influence": 4,
+				    "niveau_implication": 3
+				  },
+				  {
+				    "id": 2,
+				    "nom": "elit",
+				    "type": 1,
+				    "niveau_influence": 1,
+				    "niveau_implication": 3
+				  },
+				  {
+				    "id": 3,
+				    "nom": "sit",
+				    "type": 1,
+				    "niveau_influence": 4,
+				    "niveau_implication": 2
+				  },
+				  {
+				    "id": 4,
+				    "nom": "exercitation",
+				    "type": 2,
+				    "niveau_influence": 2,
+				    "niveau_implication": 1
+				  },
+				  {
+				    "id": 5,
+				    "nom": "nostrud",
+				    "type": 1,
+				    "niveau_influence": 4,
+				    "niveau_implication": 3
+				  },
+				  {
+				    "id": 6,
+				    "nom": "ea",
+				    "type": 3,
+				    "niveau_influence": 3,
+				    "niveau_implication": 2
+				  },
+				  {
+				    "id": 7,
+				    "nom": "cupidatat",
+				    "type": 1,
+				    "niveau_influence": 1,
+				    "niveau_implication": 1
+				  },
+				  {
+				    "id": 8,
+				    "nom": "ex",
+				    "type": 2,
+				    "niveau_influence": 3,
+				    "niveau_implication": 2
+				  },
+				  {
+				    "id": 9,
+				    "nom": "in",
+				    "type": 3,
+				    "niveau_influence": 4,
+				    "niveau_implication": 2
+				  },
+				  {
+				    "id": 10,
+				    "nom": "consequat",
+				    "type": 1,
+				    "niveau_influence": 4,
+				    "niveau_implication": 2
+				  },
+				  {
+				    "id": 11,
+				    "nom": "et",
+				    "type": 3,
+				    "niveau_influence": 1,
+				    "niveau_implication": 3
+				  },
+				  {
+				    "id": 12,
+				    "nom": "nostrud",
+				    "type": 2,
+				    "niveau_influence": 3,
+				    "niveau_implication": 2
+				  },
+				  {
+				    "id": 13,
+				    "nom": "enim",
+				    "type": 3,
+				    "niveau_influence": 4,
+				    "niveau_implication": 3
+				  },
+				  {
+				    "id": 14,
+				    "nom": "fugiat",
+				    "type": 3,
+				    "niveau_influence": 2,
+				    "niveau_implication": 2
+				  },
+				  {
+				    "id": 15,
+				    "nom": "velit",
+				    "type": 1,
+				    "niveau_influence": 4,
+				    "niveau_implication": 1
+				  },
+				  {
+				    "id": 16,
+				    "nom": "cupidatat",
+				    "type": 1,
+				    "niveau_influence": 3,
+				    "niveau_implication": 2
+				  },
+				  {
+				    "id": 17,
+				    "nom": "elit",
+				    "type": 1,
+				    "niveau_influence": 3,
+				    "niveau_implication": 3
+				  },
+				  {
+				    "id": 18,
+				    "nom": "aute",
+				    "type": 2,
+				    "niveau_influence": 4,
+				    "niveau_implication": 2
+				  },
+				  {
+				    "id": 19,
+				    "nom": "non",
+				    "type": 3,
+				    "niveau_influence": 4,
+				    "niveau_implication": 3
+				  },
+				  {
+				    "id": 20,
+				    "nom": "eu",
+				    "type": 2,
+				    "niveau_influence": 4,
+				    "niveau_implication": 1
+				  },
+				  {
+				    "id": 21,
+				    "nom": "esse",
+				    "type": 1,
+				    "niveau_influence": 3,
+				    "niveau_implication": 2
+				  },
+				  {
+				    "id": 22,
+				    "nom": "nulla",
+				    "type": 2,
+				    "niveau_influence": 2,
+				    "niveau_implication": 3
+				  },
+				  {
+				    "id": 23,
+				    "nom": "sit",
+				    "type": 3,
+				    "niveau_influence": 3,
+				    "niveau_implication": 1
+				  },
+				  {
+				    "id": 24,
+				    "nom": "mollit",
+				    "type": 2,
+				    "niveau_influence": 3,
+				    "niveau_implication": 1
+				  },
+				  {
+				    "id": 25,
+				    "nom": "dolor",
+				    "type": 2,
+				    "niveau_influence": 4,
+				    "niveau_implication": 1
+				  },
+				  {
+				    "id": 26,
+				    "nom": "magna",
+				    "type": 1,
+				    "niveau_influence": 3,
+				    "niveau_implication": 1
+				  },
+				  {
+				    "id": 27,
+				    "nom": "aute",
+				    "type": 3,
+				    "niveau_influence": 4,
+				    "niveau_implication": 2
+				  },
+				  {
+				    "id": 28,
+				    "nom": "enim",
+				    "type": 2,
+				    "niveau_influence": 4,
+				    "niveau_implication": 3
+				  },
+				  {
+				    "id": 29,
+				    "nom": "veniam",
+				    "type": 2,
+				    "niveau_influence": 2,
+				    "niveau_implication": 2
+				  },
+				  {
+				    "id": 30,
+				    "nom": "ad",
+				    "type": 2,
+				    "niveau_influence": 2,
+				    "niveau_implication": 3
+				  },
+				  {
+				    "id": 31,
+				    "nom": "id",
+				    "type": 3,
+				    "niveau_influence": 1,
+				    "niveau_implication": 2
+				  },
+				  {
+				    "id": 32,
+				    "nom": "et",
+				    "type": 2,
+				    "niveau_influence": 2,
+				    "niveau_implication": 3
+				  },
+				  {
+				    "id": 33,
+				    "nom": "ipsum",
+				    "type": 2,
+				    "niveau_influence": 4,
+				    "niveau_implication": 1
+				  },
+				  {
+				    "id": 34,
+				    "nom": "ad",
+				    "type": 2,
+				    "niveau_influence": 4,
+				    "niveau_implication": 2
+				  },
+				  {
+				    "id": 35,
+				    "nom": "quis",
+				    "type": 1,
+				    "niveau_influence": 2,
+				    "niveau_implication": 3
+				  },
+				  {
+				    "id": 36,
+				    "nom": "minim",
+				    "type": 3,
+				    "niveau_influence": 4,
+				    "niveau_implication": 3
+				  },
+				  {
+				    "id": 37,
+				    "nom": "eu",
+				    "type": 2,
+				    "niveau_influence": 1,
+				    "niveau_implication": 2
+				  },
+				  {
+				    "id": 38,
+				    "nom": "qui",
+				    "type": 1,
+				    "niveau_influence": 3,
+				    "niveau_implication": 2
+				  },
+				  {
+				    "id": 39,
+				    "nom": "occaecat",
+				    "type": 1,
+				    "niveau_influence": 2,
+				    "niveau_implication": 3
+				  },
+				  {
+				    "id": 40,
+				    "nom": "aute",
+				    "type": 3,
+				    "niveau_influence": 4,
+				    "niveau_implication": 3
+				  },
+				  {
+				    "id": 41,
+				    "nom": "Lorem",
+				    "type": 3,
+				    "niveau_influence": 2,
+				    "niveau_implication": 1
+				  },
+				  {
+				    "id": 42,
+				    "nom": "nulla",
+				    "type": 3,
+				    "niveau_influence": 1,
+				    "niveau_implication": 1
+				  },
+				  {
+				    "id": 43,
+				    "nom": "dolore",
+				    "type": 1,
+				    "niveau_influence": 3,
+				    "niveau_implication": 1
+				  },
+				  {
+				    "id": 44,
+				    "nom": "ea",
+				    "type": 1,
+				    "niveau_influence": 4,
+				    "niveau_implication": 2
+				  },
+				  {
+				    "id": 45,
+				    "nom": "cillum",
+				    "type": 3,
+				    "niveau_influence": 3,
+				    "niveau_implication": 1
+				  },
+				  {
+				    "id": 46,
+				    "nom": "ullamco",
+				    "type": 1,
+				    "niveau_influence": 1,
+				    "niveau_implication": 1
+				  },
+				  {
+				    "id": 47,
+				    "nom": "magna",
+				    "type": 1,
+				    "niveau_influence": 1,
+				    "niveau_implication": 1
+				  },
+				  {
+				    "id": 48,
+				    "nom": "fugiat",
+				    "type": 3,
+				    "niveau_influence": 3,
+				    "niveau_implication": 2
+				  },
+				  {
+				    "id": 49,
+				    "nom": "consequat",
+				    "type": 1,
+				    "niveau_influence": 3,
+				    "niveau_implication": 2
+				  },
+				  {
+				    "id": 50,
+				    "nom": "ea",
+				    "type": 2,
+				    "niveau_influence": 3,
+				    "niveau_implication": 1
+				  },
+				  {
+				    "id": 51,
+				    "nom": "anim",
+				    "type": 2,
+				    "niveau_influence": 4,
+				    "niveau_implication": 1
+				  },
+				  {
+				    "id": 52,
+				    "nom": "eiusmod",
+				    "type": 3,
+				    "niveau_influence": 3,
+				    "niveau_implication": 2
+				  },
+				  {
+				    "id": 53,
+				    "nom": "sunt",
+				    "type": 1,
+				    "niveau_influence": 3,
+				    "niveau_implication": 1
+				  },
+				  {
+				    "id": 54,
+				    "nom": "officia",
+				    "type": 1,
+				    "niveau_influence": 1,
+				    "niveau_implication": 3
+				  },
+				  {
+				    "id": 55,
+				    "nom": "dolor",
+				    "type": 2,
+				    "niveau_influence": 1,
+				    "niveau_implication": 3
+				  },
+				  {
+				    "id": 56,
+				    "nom": "sunt",
+				    "type": 2,
+				    "niveau_influence": 4,
+				    "niveau_implication": 1
+				  },
+				  {
+				    "id": 57,
+				    "nom": "consectetur",
+				    "type": 2,
+				    "niveau_influence": 3,
+				    "niveau_implication": 1
+				  }]
+			let colorTemplate = [
+				{
+					'grayScale': {
+						'gray': 'gray',
+						'first': '#fff',
+						'second': '#eee',
+						'third': '#ddd',
+						'fourth': '#ccc',
+						'fifth': '#bbb',
+						'sixth': '#aaa',
+						'seventh': '#999',
+						'eigth': '#888',
+						'nineth': '#777',
+						'tenth': '#666',
+						'eleventh': '#555',
+						'twelveth': '#444',
+						'thirteenth': '#333',
+						'fourteenth': '#222',
+						'fifteenth': '#111'
+					},
+					'niveauImplication': {
+						'engage': '#086e09',
+						'peuEngage': '#941209',
+						'indecis': '#ffdd00'
+					},
+					'implicationText': {
+						'engage': '+',
+						'peuEngage': '-',
+						'indecis': '!',
+					}
+
+				}]
+			let nbrDetails = [
+				{
+					'type_1': {
+						'nbr': 0,
+						'direct': 0,
+						'assezDirect': 0,
+						'peuDirect': 0,
+						'indirect': 0
+					},
+					'type_2': {
+						'nbr': 0,
+						'direct': 0,
+						'assezDirect': 0,
+						'peuDirect': 0,
+						'indirect': 0
+					},
+					'type_3': {
+						'nbr': 0,
+						'direct': 0,
+						'assezDirect': 0,
+						'peuDirect': 0,
+						'indirect': 0
+					}
+				}]
+			let nbrImplication = [
+				{
+					'type_1': {
+						'engage': {
+							'nbr': 0,
+							'direct': 0,
+							'assezDirect': 0,
+							'peuDirect': 0,
+							'indirect': 0
+						},
+						'peuEngage':  {
+							'nbr': 0,
+							'direct': 0,
+							'assezDirect': 0,
+							'peuDirect': 0,
+							'indirect': 0
+						},
+						'indecis':  {
+							'nbr': 0,
+							'direct': 0,
+							'assezDirect': 0,
+							'peuDirect': 0,
+							'indirect': 0
+						}
+					},
+					'type_2': {
+						'engage': {
+							'nbr': 0,
+							'direct': 0,
+							'assezDirect': 0,
+							'peuDirect': 0,
+							'indirect': 0
+						},
+						'peuEngage':  {
+							'nbr': 0,
+							'direct': 0,
+							'assezDirect': 0,
+							'peuDirect': 0,
+							'indirect': 0
+						},
+						'indecis':  {
+							'nbr': 0,
+							'direct': 0,
+							'assezDirect': 0,
+							'peuDirect': 0,
+							'indirect': 0
+						}
+					},
+					'type_3': {
+						'engage': {
+							'nbr': 0,
+							'direct': 0,
+							'assezDirect': 0,
+							'peuDirect': 0,
+							'indirect': 0
+						},
+						'peuEngage':  {
+							'nbr': 0,
+							'direct': 0,
+							'assezDirect': 0,
+							'peuDirect': 0,
+							'indirect': 0
+						},
+						'indecis':  {
+							'nbr': 0,
+							'direct': 0,
+							'assezDirect': 0,
+							'peuDirect': 0,
+							'indirect': 0
+						}
+					}
+				}]
+
+			let colors = {
+				"redFisrt" : "#6e0505",
+				"redSecond" : "#a61b1b",
+				"redThird" : "#d13d3d",
+				"redFourth" : "#f76060",
+				"greenFisrt" : "#014508",
+				"greenSecond" : "#2e6b34",
+				"greenThird" : "#58a65f",
+				"greenFourth" : "#8ade92",
+				"yellowFirst" : "#662f0c",
+				"yellowSecond" : "#854721",
+				"yellowThird" : "#a86338",
+				"yellowFourth" : "#cf8557",}
+			
+			let dim = document.querySelector('canvas').height // Hauteur du Canvas
+			let principalColor = "#31528C" // Couleur principale
+			let strokeColor = principalColor // Couleur de ligne par défaut
+			let fillColor = principalColor // Couleur de remplissage par défaut
+			let bigBorder = dim/100 // Epaisseur bordure grosse
+			let simpleBorder = dim/200 // Epaisseur bordure légère
+			let lightBorder = dim/600 // Epaisseur bordure légère
+			let ppName = ''
+			let arcLength = 0
+			let rayon = 0
+		
+			// Parcours des parties prenantes afin d'identifier le nombre selon les différentes catégories
+				for (var i=0; i<items.length; i++) {
+
+					if (items[i].type == 1) {
+
+						nbrDetails[0].type_1.nbr +=1
+						if(items[i].niveau_influence == 1) {
+							nbrDetails[0].type_1.direct += 1
+						}else if(items[i].niveau_influence == 2) {
+							nbrDetails[0].type_1.assezDirect += 1
+						}else if(items[i].niveau_influence == 3) {
+							nbrDetails[0].type_1.peuDirect += 1
+						}else {
+							nbrDetails[0].type_1.indirect += 1
+						}
+
+						if(items[i].niveau_implication == 1) {
+							nbrImplication[0].type_1.engage.nbr += 1
+							if(items[i].niveau_influence == 1) {
+								nbrImplication[0].type_1.engage.direct += 1
+							}else if(items[i].niveau_influence == 2) {
+								nbrImplication[0].type_1.engage.assezDirect += 1
+							}else if(items[i].niveau_influence == 3) {
+								nbrImplication[0].type_1.engage.peuDirect += 1
+							}else {
+								nbrImplication[0].type_1.engage.indirect += 1
+							}
+
+						}else if(items[i].niveau_implication == 2) {
+							nbrImplication[0].type_1.peuEngage.nbr += 1
+							if(items[i].niveau_influence == 1) {
+								nbrImplication[0].type_1.peuEngage.direct += 1
+							}else if(items[i].niveau_influence == 2) {
+								nbrImplication[0].type_1.peuEngage.assezDirect += 1
+							}else if(items[i].niveau_influence == 3) {
+								nbrImplication[0].type_1.peuEngage.peuDirect += 1
+							}else {
+								nbrImplication[0].type_1.peuEngage.indirect += 1
+							}
+						}else {
+							nbrImplication[0].type_1.indecis.nbr += 1
+							if(items[i].niveau_influence == 1) {
+								nbrImplication[0].type_1.indecis.direct += 1
+							}else if(items[i].niveau_influence == 2) {
+								nbrImplication[0].type_1.indecis.assezDirect += 1
+							}else if(items[i].niveau_influence == 3) {
+								nbrImplication[0].type_1.indecis.peuDirect += 1
+							}else {
+								nbrImplication[0].type_1.indecis.indirect += 1
+							}
+						}
+					} else if (items[i].type == 2) {
+
+						nbrDetails[0].type_2.nbr +=1
+						if(items[i].niveau_influence == 1) {
+							nbrDetails[0].type_2.direct += 1
+						}else if(items[i].niveau_influence == 2) {
+							nbrDetails[0].type_2.assezDirect += 1
+						}else if(items[i].niveau_influence == 3) {
+							nbrDetails[0].type_2.peuDirect += 1
+						}else {
+							nbrDetails[0].type_2.indirect += 1
+						}
+
+						if(items[i].niveau_implication == 1) {
+							nbrImplication[0].type_2.engage.nbr += 1
+							if(items[i].niveau_influence == 1) {
+								nbrImplication[0].type_2.engage.direct += 1
+							}else if(items[i].niveau_influence == 2) {
+								nbrImplication[0].type_2.engage.assezDirect += 1
+							}else if(items[i].niveau_influence == 3) {
+								nbrImplication[0].type_2.engage.peuDirect += 1
+							}else {
+								nbrImplication[0].type_2.engage.indirect += 1
+							}
+
+						}else if(items[i].niveau_implication == 2) {
+							nbrImplication[0].type_2.peuEngage.nbr += 1
+							if(items[i].niveau_influence == 1) {
+								nbrImplication[0].type_2.peuEngage.direct += 1
+							}else if(items[i].niveau_influence == 2) {
+								nbrImplication[0].type_2.peuEngage.assezDirect += 1
+							}else if(items[i].niveau_influence == 3) {
+								nbrImplication[0].type_2.peuEngage.peuDirect += 1
+							}else {
+								nbrImplication[0].type_2.peuEngage.indirect += 1
+							}
+						}else {
+							nbrImplication[0].type_2.indecis.nbr += 1
+							if(items[i].niveau_influence == 1) {
+								nbrImplication[0].type_2.indecis.direct += 1
+							}else if(items[i].niveau_influence == 2) {
+								nbrImplication[0].type_2.indecis.assezDirect += 1
+							}else if(items[i].niveau_influence == 3) {
+								nbrImplication[0].type_2.indecis.peuDirect += 1
+							}else {
+								nbrImplication[0].type_2.indecis.indirect += 1
+							}
+						}
+					}else {
+
+						nbrDetails[0].type_3.nbr +=1
+						if(items[i].niveau_influence == 1) {
+							nbrDetails[0].type_3.direct += 1
+						}else if(items[i].niveau_influence == 2) {
+							nbrDetails[0].type_3.assezDirect += 1
+						}else if(items[i].niveau_influence == 3) {
+							nbrDetails[0].type_3.peuDirect += 1
+						}else {
+							nbrDetails[0].type_3.indirect += 1
+						}
+
+						if(items[i].niveau_implication == 1) {
+							nbrImplication[0].type_3.engage.nbr += 1
+							if(items[i].niveau_influence == 1) {
+								nbrImplication[0].type_3.engage.direct += 1
+							}else if(items[i].niveau_influence == 2) {
+								nbrImplication[0].type_3.engage.assezDirect += 1
+							}else if(items[i].niveau_influence == 3) {
+								nbrImplication[0].type_3.engage.peuDirect += 1
+							}else {
+								nbrImplication[0].type_3.engage.indirect += 1
+							}
+
+						}else if(items[i].niveau_implication == 2) {
+							nbrImplication[0].type_3.peuEngage.nbr += 1
+							if(items[i].niveau_influence == 1) {
+								nbrImplication[0].type_3.peuEngage.direct += 1
+							}else if(items[i].niveau_influence == 2) {
+								nbrImplication[0].type_3.peuEngage.assezDirect += 1
+							}else if(items[i].niveau_influence == 3) {
+								nbrImplication[0].type_3.peuEngage.peuDirect += 1
+							}else {
+								nbrImplication[0].type_3.peuEngage.indirect += 1
+							}
+						}else {
+							nbrImplication[0].type_3.indecis.nbr += 1
+							if(items[i].niveau_influence == 1) {
+								nbrImplication[0].type_3.indecis.direct += 1
+							}else if(items[i].niveau_influence == 2) {
+								nbrImplication[0].type_3.indecis.assezDirect += 1
+							}else if(items[i].niveau_influence == 3) {
+								nbrImplication[0].type_3.indecis.peuDirect += 1
+							}else {
+								nbrImplication[0].type_3.indecis.indirect += 1
+							}
+						}
+					}
+				}
+
+
+			console.log(nbrImplication)
+			let angleInterval = 0
+			let tmpAngle = 0
+			let centerX = 0
+			let centerY = 0
+			let ecartX = 0
+			let ecartY = 0
+			let implicationColor = ''
+			let firstInitialAngle = 0
+			let secondInitialAngle = (nbrDetails[0].type_1.nbr/items.length)*2*Math.PI
+			let thirdInitialAngle = ((nbrDetails[0].type_1.nbr + nbrDetails[0].type_2.nbr) / items.length)*2*Math.PI
+			let initialPpAngles = [
+				{
+					'directInitialAngle': {
+						'first': 0,
+						'second': secondInitialAngle,
+						'third': thirdInitialAngle
+					},
+					'assezDiectInitialAngle': {
+						'first': 0,
+						'second': secondInitialAngle,
+						'third': thirdInitialAngle
+					},
+					'peuDirectInitialAngle': {
+						'first': 0,
+						'second': secondInitialAngle,
+						'third': thirdInitialAngle
+					},
+					'indirectInitialAngle': {
+						'first': 0,
+						'second': secondInitialAngle,
+						'third': thirdInitialAngle
+					}
+				}]
+		
+		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// DESSIN \
+
+			drawZone1()
+			drawZone2()
+			drawZone3()
+			drawZone4()
+			drawZone5()
+			drawZone6()
+			drawZone7()
+			drawLastZone('canvas8')
+
+			function drawZone1() {
+
+				let zone1 = document.getElementById("canvas1")
+				let ctx1 = zone1.getContext('2d')
+				let nbrPp = 0
+				let angleInterval = 0
+				let angleInitial = 0
+				let spaceBetween = ((dim/2) - (dim/4))/4 // Espace entre les cercles annexes sur lesquelles vont se placer les parties prenantes
+				let firstAngle = firstInitialAngle
+				let secondAngle = secondInitialAngle
+				let thirdAngle = thirdInitialAngle
+
+				for (var i=0; i<items.length; i++) {
+
+					if(items[i].niveau_influence == 1) {
+
+						nbrPp ++;
+					}
+				}
+
+				// console.log(nbrPp)
+
+				let ppRadius = dim/25
+
+				initDraw(ctx1) // Squelette du diagramme (Les trois premiers cercles)
+				drawCircle(ctx1, dim/2, dim/2, (dim/2 - 1*(spaceBetween)), lightBorder, colorTemplate[0].grayScale.fifth, false, false)
+				drawCircle(ctx1, dim/2, dim/2, (dim/2 - 2*(spaceBetween)), lightBorder, colorTemplate[0].grayScale.fifth, false, false)
+				drawCircle(ctx1, dim/2, dim/2, (dim/2 - 3*(spaceBetween)), lightBorder, colorTemplate[0].grayScale.fifth, false, false)
+				drawCircle(ctx1, dim/2, dim/2, (dim/2 - 4*(spaceBetween)), lightBorder, colorTemplate[0].grayScale.fifth, false, false)
+				// drawCircle(ctx1, dim/2, dim/2, dim/2 - spaceBetween, lightBorder, 'gray', false)
+
+				for (var i=0; i<items.length; i++) {
+
+					ppName = items[i].nom.toUpperCase()
+
+					if(items[i].type == 1) {
+
+						if(items[i].niveau_influence == 1) {
+
+							angleInterval = ((nbrDetails[0].type_1.nbr/items.length)*2*Math.PI)/((nbrDetails[0].type_1.direct) + 1)
+							initialPpAngles[0].directInitialAngle.first += angleInterval
+
+							drawPp(ctx1, (dim/2 - 4*(spaceBetween)), nbrPp, initialPpAngles[0].directInitialAngle.first, ppRadius, lightBorder, colors.redFisrt, items[i].niveau_implication)
+						}
+					}else if(items[i].type == 2) {
+
+						if(items[i].niveau_influence == 1) {
+
+							angleInterval = ((nbrDetails[0].type_2.nbr/items.length)*2*Math.PI)/((nbrDetails[0].type_2.direct) + 1)
+							initialPpAngles[0].directInitialAngle.second += angleInterval
+
+							drawPp(ctx1, (dim/2 - 4*(spaceBetween)), nbrPp, initialPpAngles[0].directInitialAngle.second, ppRadius, lightBorder, colors.greenFisrt, items[i].niveau_implication)
+						}
+					}else {
+
+						if(items[i].niveau_influence == 1) {
+
+							angleInterval = ((nbrDetails[0].type_3.nbr/items.length)*2*Math.PI)/((nbrDetails[0].type_3.direct) + 1)
+							initialPpAngles[0].directInitialAngle.third += angleInterval
+
+							drawPp(ctx1, (dim/2 - 4*(spaceBetween)), nbrPp, initialPpAngles[0].directInitialAngle.third, ppRadius, lightBorder, colors.yellowFirst, items[i].niveau_implication)
+						}
+
+					}
+				}
+				init();}
+			function drawZone2() {
+
+				let zone2 = document.getElementById("canvas2")
+				let ctx2 = zone2.getContext('2d')
+				let nbrPp = 0
+				let angleInterval = 0
+				let angleInitial = 0
+				let spaceBetween = ((dim/2) - (dim/4))/4 // Espace entre les cercles annexes sur lesquelles vont se placer les parties prenantes
+				let firstAngle = firstInitialAngle
+				let secondAngle = secondInitialAngle
+				let thirdAngle = thirdInitialAngle
+
+				for (var i=0; i<items.length; i++) {
+
+					if(items[i].niveau_influence == 2) {
+
+						nbrPp ++;
+					}
+				}
+
+				// console.log(nbrPp)
+
+				let ppRadius = dim/25
+
+				initDraw(ctx2) // Squelette du diagramme (Les trois premiers cercles)
+				drawCircle(ctx2, dim/2, dim/2, (dim/2 - 1*(spaceBetween)), lightBorder, colorTemplate[0].grayScale.fifth, false, false)
+				drawCircle(ctx2, dim/2, dim/2, (dim/2 - 2*(spaceBetween)), lightBorder, colorTemplate[0].grayScale.fifth, false, false)
+				drawCircle(ctx2, dim/2, dim/2, (dim/2 - 3*(spaceBetween)), lightBorder, colorTemplate[0].grayScale.fifth, false, false)
+				drawCircle(ctx2, dim/2, dim/2, (dim/2 - 4*(spaceBetween)), lightBorder, colorTemplate[0].grayScale.fifth, false, false)
+
+				for (var i=0; i<items.length; i++) {
+
+					ppName = items[i].nom.toUpperCase()
+
+					if(items[i].type == 1) {
+
+						if(items[i].niveau_influence == 2) {
+
+							angleInterval = ((nbrDetails[0].type_1.nbr/items.length)*2*Math.PI)/((nbrDetails[0].type_1.assezDirect) + 1)
+							initialPpAngles[0].assezDiectInitialAngle.first += angleInterval
+
+							drawPp(ctx2, (dim/2 - 3*(spaceBetween)), nbrPp, initialPpAngles[0].assezDiectInitialAngle.first, ppRadius, lightBorder, colors.redSecond, items[i].niveau_implication)
+						}
+					}else if(items[i].type == 2) {
+
+						if(items[i].niveau_influence == 2) {
+
+							angleInterval = ((nbrDetails[0].type_2.nbr/items.length)*2*Math.PI)/((nbrDetails[0].type_2.assezDirect) + 1)
+							initialPpAngles[0].assezDiectInitialAngle.second += angleInterval
+
+							drawPp(ctx2, (dim/2 - 3*(spaceBetween)), nbrPp, initialPpAngles[0].assezDiectInitialAngle.second, ppRadius, lightBorder, colors.greenSecond, items[i].niveau_implication)
+						}
+					}else {
+
+						if(items[i].niveau_influence == 2) {
+
+							angleInterval = ((nbrDetails[0].type_3.nbr/items.length)*2*Math.PI)/((nbrDetails[0].type_3.assezDirect) + 1)
+							initialPpAngles[0].assezDiectInitialAngle.third += angleInterval
+
+							drawPp(ctx2, (dim/2 - 3*(spaceBetween)), nbrPp, initialPpAngles[0].assezDiectInitialAngle.third, ppRadius, lightBorder, colors.yellowSecond, items[i].niveau_implication)
+						}
+
+					}
+				}
+				init();}
+			function drawZone3() {
+
+				let zone3 = document.getElementById("canvas3")
+				let ctx3 = zone3.getContext('2d')
+				let nbrPp = 0
+				let angleInterval = 0
+				let angleInitial = 0
+				let spaceBetween = ((dim/2) - (dim/4))/4 // Espace entre les cercles annexes sur lesquelles vont se placer les parties prenantes
+				let firstAngle = firstInitialAngle
+				let secondAngle = secondInitialAngle
+				let thirdAngle = thirdInitialAngle
+
+				for (var i=0; i<items.length; i++) {
+
+					if(items[i].niveau_influence == 3) {
+
+						nbrPp ++;
+					}
+				}
+
+				// console.log(nbrPp)
+
+				let ppRadius = dim/25
+
+				initDraw(ctx3) // Squelette du diagramme (Les trois premiers cercles)
+				drawCircle(ctx3, dim/2, dim/2, (dim/2 - 1*(spaceBetween)), lightBorder, colorTemplate[0].grayScale.fifth, false, false)
+				drawCircle(ctx3, dim/2, dim/2, (dim/2 - 2*(spaceBetween)), lightBorder, colorTemplate[0].grayScale.fifth, false, false)
+				drawCircle(ctx3, dim/2, dim/2, (dim/2 - 3*(spaceBetween)), lightBorder, colorTemplate[0].grayScale.fifth, false, false)
+				drawCircle(ctx3, dim/2, dim/2, (dim/2 - 4*(spaceBetween)), lightBorder, colorTemplate[0].grayScale.fifth, false, false)
+
+				for (var i=0; i<items.length; i++) {
+
+					ppName = items[i].nom.toUpperCase()
+
+					if(items[i].type == 1) {
+
+						if(items[i].niveau_influence == 3) {
+
+							angleInterval = ((nbrDetails[0].type_1.nbr/items.length)*2*Math.PI)/((nbrDetails[0].type_1.peuDirect) + 1)
+							initialPpAngles[0].peuDirectInitialAngle.first += angleInterval
+
+							drawPp(ctx3, (dim/2 - 2*(spaceBetween)), nbrPp, initialPpAngles[0].peuDirectInitialAngle.first, ppRadius, lightBorder, colors.redSecond, items[i].niveau_implication)
+						}
+					}else if(items[i].type == 2) {
+
+						if(items[i].niveau_influence == 3) {
+
+							angleInterval = ((nbrDetails[0].type_2.nbr/items.length)*2*Math.PI)/((nbrDetails[0].type_2.peuDirect) + 1)
+							initialPpAngles[0].peuDirectInitialAngle.second += angleInterval
+
+							drawPp(ctx3, (dim/2 - 2*(spaceBetween)), nbrPp, initialPpAngles[0].peuDirectInitialAngle.second, ppRadius, lightBorder, colors.greenSecond, items[i].niveau_implication)
+						}
+					}else {
+
+						if(items[i].niveau_influence == 3) {
+
+							angleInterval = ((nbrDetails[0].type_3.nbr/items.length)*2*Math.PI)/((nbrDetails[0].type_3.peuDirect) + 1)
+							initialPpAngles[0].peuDirectInitialAngle.third += angleInterval
+
+							drawPp(ctx3, (dim/2 - 2*(spaceBetween)), nbrPp, initialPpAngles[0].peuDirectInitialAngle.third, ppRadius, lightBorder, colors.yellowSecond, items[i].niveau_implication)
+						}
+
+					}
+				}
+				init();}
+			function drawZone4() {
+
+				let zone4 = document.getElementById("canvas4")
+				let ctx4 = zone4.getContext('2d')
+				let nbrPp = 0
+				let angleInterval = 0
+				let angleInitial = 0
+				let spaceBetween = ((dim/2) - (dim/4))/4 // Espace entre les cercles annexes sur lesquelles vont se placer les parties prenantes
+				let firstAngle = firstInitialAngle
+				let secondAngle = secondInitialAngle
+				let thirdAngle = thirdInitialAngle
+
+				for (var i=0; i<items.length; i++) {
+
+					if(items[i].niveau_influence == 4) {
+
+						nbrPp ++;
+					}
+				}
+
+				// console.log(nbrPp)
+
+				let ppRadius = dim/25
+
+				initDraw(ctx4) // Squelette du diagramme (Les trois premiers cercles)
+				drawCircle(ctx4, dim/2, dim/2, (dim/2 - 1*(spaceBetween)), lightBorder, colorTemplate[0].grayScale.fifth, false, false)
+				drawCircle(ctx4, dim/2, dim/2, (dim/2 - 2*(spaceBetween)), lightBorder, colorTemplate[0].grayScale.fifth, false, false)
+				drawCircle(ctx4, dim/2, dim/2, (dim/2 - 3*(spaceBetween)), lightBorder, colorTemplate[0].grayScale.fifth, false, false)
+				drawCircle(ctx4, dim/2, dim/2, (dim/2 - 4*(spaceBetween)), lightBorder, colorTemplate[0].grayScale.fifth, false, false)
+
+				for (var i=0; i<items.length; i++) {
+
+					ppName = items[i].nom.toUpperCase()
+
+					if(items[i].type == 1) {
+
+						if(items[i].niveau_influence == 4) {
+
+							angleInterval = ((nbrDetails[0].type_1.nbr/items.length)*2*Math.PI)/((nbrDetails[0].type_1.indirect) + 1)
+							initialPpAngles[0].indirectInitialAngle.first += angleInterval
+
+							drawPp(ctx4, (dim/2 - 1*(spaceBetween)), nbrPp, initialPpAngles[0].indirectInitialAngle.first, ppRadius, lightBorder, colors.redSecond, items[i].niveau_implication)
+						}
+					}else if(items[i].type == 2) {
+
+						if(items[i].niveau_influence == 4) {
+
+							angleInterval = ((nbrDetails[0].type_2.nbr/items.length)*2*Math.PI)/((nbrDetails[0].type_2.indirect) + 1)
+							initialPpAngles[0].indirectInitialAngle.second += angleInterval
+
+							drawPp(ctx4, (dim/2 - 1*(spaceBetween)), nbrPp, initialPpAngles[0].indirectInitialAngle.second, ppRadius, lightBorder, colors.greenSecond, items[i].niveau_implication)
+						}
+					}else {
+
+						if(items[i].niveau_influence == 3) {
+
+							angleInterval = ((nbrDetails[0].type_3.nbr/items.length)*2*Math.PI)/((nbrDetails[0].type_3.indirect) + 1)
+							initialPpAngles[0].indirectInitialAngle.third += angleInterval
+
+							drawPp(ctx4, (dim/2 - 1*(spaceBetween)), nbrPp, initialPpAngles[0].indirectInitialAngle.third, ppRadius, lightBorder, colors.yellowSecond, items[i].niveau_implication)
+						}
+
+					}
+				}
+				init();}
+			function drawZone5() {
+
+				// Les Varaibles
+					let canvas = document.getElementById("canvas5") // Le canvas
+					let ctx5 = canvas.getContext("2d") // Le contexte de dessin
+					let ppRadius = dim/30
+					let spaceBetween = ((dim/2) - ((dim/30) + (dim/10) + (dim/200) + ((dim*3)/100)))/4 // Espace entre les cercles annexes sur lesquelles vont se placer les parties prenantes
+				// Dessin des zones
+					initGlobalDraw(ctx5) // Squelette du diagramme (Les trois premiers cercles)
+					drawCircle(ctx5, dim/2, dim/2, (dim/2 - 1*(spaceBetween)), lightBorder, colorTemplate[0].grayScale.fifth, false, false)
+					drawCircle(ctx5, dim/2, dim/2, (dim/2 - 2*(spaceBetween)), lightBorder, colorTemplate[0].grayScale.fifth, false, false)
+					drawCircle(ctx5, dim/2, dim/2, (dim/2 - 3*(spaceBetween)), lightBorder, colorTemplate[0].grayScale.fifth, false, false)
+					drawCircle(ctx5, dim/2, dim/2, (dim/2 - 4*(spaceBetween)), lightBorder, colorTemplate[0].grayScale.fifth, false, false)
+
+				// Dessin des parties prenantes dans les zones requises
+					for (var i=0; i<items.length; i++) {
+
+						ppName = items[i].nom.toUpperCase()
+						
+						if(items[i].niveau_implication == 1) {
+
+							if (items[i].type == 1) {
+
+								if(items[i].niveau_influence == 1) {
+
+									angleInterval = ((nbrDetails[0].type_1.nbr/items.length)*2*Math.PI)/((nbrImplication[0].type_1.engage.direct) + 1)
+									initialPpAngles[0].directInitialAngle.first += angleInterval
+
+									drawPp(ctx5, (dim/2 - 4*(spaceBetween)), nbrDetails[0].type_1.direct, initialPpAngles[0].directInitialAngle.first, ppRadius, lightBorder, colors.redFisrt, items[i].niveau_implication)
+								}else if(items[i].niveau_influence == 2) {
+
+									angleInterval = ((nbrDetails[0].type_1.nbr/items.length)*2*Math.PI)/((nbrImplication[0].type_1.engage.assezDirect) + 1)
+									initialPpAngles[0].assezDiectInitialAngle.first += angleInterval
+									
+									drawPp(ctx5, (dim/2 - 3*(spaceBetween)), nbrDetails[0].type_1.assezDirect, initialPpAngles[0].assezDiectInitialAngle.first, ppRadius, lightBorder, colors.redSecond, items[i].niveau_implication)
+								}else if(items[i].niveau_influence == 3) {
+
+									angleInterval = ((nbrDetails[0].type_1.nbr/items.length)*2*Math.PI)/((nbrImplication[0].type_1.engage.peuDirect) + 1)
+									initialPpAngles[0].peuDirectInitialAngle.first += angleInterval
+									
+									drawPp(ctx5, (dim/2 - 2*(spaceBetween)), nbrDetails[0].type_1.peuDirect, initialPpAngles[0].peuDirectInitialAngle.first, ppRadius, lightBorder, colors.redThird, items[i].niveau_implication)
+								}else {
+
+									angleInterval = ((nbrDetails[0].type_1.nbr/items.length)*2*Math.PI)/((nbrImplication[0].type_1.engage.indirect) + 1)
+									initialPpAngles[0].indirectInitialAngle.first += angleInterval
+									
+									drawPp(ctx5, (dim/2 - spaceBetween), nbrDetails[0].type_1.indirect, initialPpAngles[0].indirectInitialAngle.first, ppRadius, lightBorder, colors.redFourth, items[i].niveau_implication)
+								}
+							}else if (items[i].type == 2) {
+
+								if(items[i].niveau_influence == 1) {
+
+									angleInterval = ((nbrDetails[0].type_2.nbr/items.length)*2*Math.PI)/((nbrImplication[0].type_2.engage.direct) + 1)
+									initialPpAngles[0].directInitialAngle.second += angleInterval
+									
+									drawPp(ctx5, (dim/2 - 4*(spaceBetween)), nbrDetails[0].type_2.direct, initialPpAngles[0].directInitialAngle.second, ppRadius, lightBorder, colors.greenFisrt, items[i].niveau_implication)
+								}else if(items[i].niveau_influence == 2) {
+
+									angleInterval = ((nbrDetails[0].type_2.nbr/items.length)*2*Math.PI)/((nbrImplication[0].type_2.engage.assezDirect) + 1)
+									initialPpAngles[0].assezDiectInitialAngle.second += angleInterval
+									
+									drawPp(ctx5, (dim/2 - 3*(spaceBetween)), nbrDetails[0].type_2.assezDirect, initialPpAngles[0].assezDiectInitialAngle.second, ppRadius, lightBorder, colors.greenSecond, items[i].niveau_implication)
+								}else if(items[i].niveau_influence == 3) {
+
+									angleInterval = ((nbrDetails[0].type_2.nbr/items.length)*2*Math.PI)/((nbrImplication[0].type_2.engage.peuDirect) + 1)
+									initialPpAngles[0].peuDirectInitialAngle.second += angleInterval
+									
+									drawPp(ctx5, (dim/2 - 2*(spaceBetween)), nbrDetails[0].type_2.peuDirect, initialPpAngles[0].peuDirectInitialAngle.second, ppRadius, lightBorder, colors.greenThird, items[i].niveau_implication)
+								}else {
+
+									angleInterval = ((nbrDetails[0].type_2.nbr/items.length)*2*Math.PI)/((nbrImplication[0].type_2.engage.indirect) + 1)
+									initialPpAngles[0].indirectInitialAngle.second += angleInterval
+									
+									drawPp(ctx5, (dim/2 - spaceBetween), nbrDetails[0].type_2.indirect, initialPpAngles[0].indirectInitialAngle.second, ppRadius, lightBorder, colors.greenFourth, items[i].niveau_implication)
+								}
+							}else {
+
+								if(items[i].niveau_influence == 1) {
+
+									angleInterval = ((nbrDetails[0].type_3.nbr/items.length)*2*Math.PI)/((nbrImplication[0].type_3.engage.direct) + 1)
+									initialPpAngles[0].directInitialAngle.third += angleInterval
+									
+									drawPp(ctx5, (dim/2 - 4*(spaceBetween)), nbrDetails[0].type_3.direct, initialPpAngles[0].directInitialAngle.third, ppRadius, lightBorder, colors.yellowFirst, items[i].niveau_implication)
+								}else if(items[i].niveau_influence == 2) {
+
+									angleInterval = ((nbrDetails[0].type_3.nbr/items.length)*2*Math.PI)/((nbrImplication[0].type_3.engage.assezDirect) + 1)
+									initialPpAngles[0].assezDiectInitialAngle.third += angleInterval
+									
+									drawPp(ctx5, (dim/2 - 3*(spaceBetween)), nbrDetails[0].type_3.assezDirect, initialPpAngles[0].assezDiectInitialAngle.third, ppRadius, lightBorder, colors.yellowSecond, items[i].niveau_implication)
+								}else if(items[i].niveau_influence == 3) {
+
+									angleInterval = ((nbrDetails[0].type_3.nbr/items.length)*2*Math.PI)/((nbrImplication[0].type_3.engage.peuDirect) + 1)
+									initialPpAngles[0].peuDirectInitialAngle.third += angleInterval
+									
+									drawPp(ctx5, (dim/2 - 2*(spaceBetween)), nbrDetails[0].type_3.peuDirect, initialPpAngles[0].peuDirectInitialAngle.third, ppRadius, lightBorder, colors.yellowThird, items[i].niveau_implication)
+								}else {
+
+									angleInterval = ((nbrDetails[0].type_3.nbr/items.length)*2*Math.PI)/((nbrImplication[0].type_3.engage.indirect) + 1)
+									initialPpAngles[0].indirectInitialAngle.third += angleInterval
+									
+									drawPp(ctx5, (dim/2 - spaceBetween), nbrDetails[0].type_3.indirect, initialPpAngles[0].indirectInitialAngle.third, ppRadius, lightBorder, colors.yellowFourth, items[i].niveau_implication)
+								}
+								// console.log('ahaha')
+							}
+						}
+					}
+					init()
+				}
+			function drawZone6() {
+
+				// Les Varaibles
+					let canvas = document.getElementById("canvas6") // Le canvas
+					let ctx6 = canvas.getContext("2d") // Le contexte de dessin
+					let ppRadius = dim/30
+					let spaceBetween = ((dim/2) - ((dim/30) + (dim/10) + (dim/200) + ((dim*3)/100)))/4 // Espace entre les cercles annexes sur lesquelles vont se placer les parties prenantes
+				// Dessin des zones
+					initGlobalDraw(ctx6) // Squelette du diagramme (Les trois premiers cercles)
+					drawCircle(ctx6, dim/2, dim/2, (dim/2 - 1*(spaceBetween)), lightBorder, colorTemplate[0].grayScale.fifth, false, false)
+					drawCircle(ctx6, dim/2, dim/2, (dim/2 - 2*(spaceBetween)), lightBorder, colorTemplate[0].grayScale.fifth, false, false)
+					drawCircle(ctx6, dim/2, dim/2, (dim/2 - 3*(spaceBetween)), lightBorder, colorTemplate[0].grayScale.fifth, false, false)
+					drawCircle(ctx6, dim/2, dim/2, (dim/2 - 4*(spaceBetween)), lightBorder, colorTemplate[0].grayScale.fifth, false, false)
+
+				// Dessin des parties prenantes dans les zones requises
+					for (var i=0; i<items.length; i++) {
+
+						ppName = items[i].nom.toUpperCase()
+						
+						if(items[i].niveau_implication == 2) {
+
+							if (items[i].type == 1) {
+
+								if(items[i].niveau_influence == 1) {
+
+									angleInterval = ((nbrDetails[0].type_1.nbr/items.length)*2*Math.PI)/((nbrImplication[0].type_1.peuEngage.direct) + 1)
+									initialPpAngles[0].directInitialAngle.first += angleInterval
+
+									drawPp(ctx6, (dim/2 - 4*(spaceBetween)), nbrDetails[0].type_1.direct, initialPpAngles[0].directInitialAngle.first, ppRadius, lightBorder, colors.redFisrt, items[i].niveau_implication)
+								}else if(items[i].niveau_influence == 2) {
+
+									angleInterval = ((nbrDetails[0].type_1.nbr/items.length)*2*Math.PI)/((nbrImplication[0].type_1.peuEngage.assezDirect) + 1)
+									initialPpAngles[0].assezDiectInitialAngle.first += angleInterval
+									
+									drawPp(ctx6, (dim/2 - 3*(spaceBetween)), nbrDetails[0].type_1.assezDirect, initialPpAngles[0].assezDiectInitialAngle.first, ppRadius, lightBorder, colors.redSecond, items[i].niveau_implication)
+								}else if(items[i].niveau_influence == 3) {
+
+									angleInterval = ((nbrDetails[0].type_1.nbr/items.length)*2*Math.PI)/((nbrImplication[0].type_1.peuEngage.peuDirect) + 1)
+									initialPpAngles[0].peuDirectInitialAngle.first += angleInterval
+									
+									drawPp(ctx6, (dim/2 - 2*(spaceBetween)), nbrDetails[0].type_1.peuDirect, initialPpAngles[0].peuDirectInitialAngle.first, ppRadius, lightBorder, colors.redThird, items[i].niveau_implication)
+								}else {
+
+									angleInterval = ((nbrDetails[0].type_1.nbr/items.length)*2*Math.PI)/((nbrImplication[0].type_1.peuEngage.indirect) + 1)
+									initialPpAngles[0].indirectInitialAngle.first += angleInterval
+									
+									drawPp(ctx6, (dim/2 - spaceBetween), nbrDetails[0].type_1.indirect, initialPpAngles[0].indirectInitialAngle.first, ppRadius, lightBorder, colors.redFourth, items[i].niveau_implication)
+								}
+							}else if (items[i].type == 2) {
+
+								if(items[i].niveau_influence == 1) {
+
+									angleInterval = ((nbrDetails[0].type_2.nbr/items.length)*2*Math.PI)/((nbrImplication[0].type_2.peuEngage.direct) + 1)
+									initialPpAngles[0].directInitialAngle.second += angleInterval
+									
+									drawPp(ctx6, (dim/2 - 4*(spaceBetween)), nbrDetails[0].type_2.direct, initialPpAngles[0].directInitialAngle.second, ppRadius, lightBorder, colors.greenFisrt, items[i].niveau_implication)
+								}else if(items[i].niveau_influence == 2) {
+
+									angleInterval = ((nbrDetails[0].type_2.nbr/items.length)*2*Math.PI)/((nbrImplication[0].type_2.peuEngage.assezDirect) + 1)
+									initialPpAngles[0].assezDiectInitialAngle.second += angleInterval
+									
+									drawPp(ctx6, (dim/2 - 3*(spaceBetween)), nbrDetails[0].type_2.assezDirect, initialPpAngles[0].assezDiectInitialAngle.second, ppRadius, lightBorder, colors.greenSecond, items[i].niveau_implication)
+								}else if(items[i].niveau_influence == 3) {
+
+									angleInterval = ((nbrDetails[0].type_2.nbr/items.length)*2*Math.PI)/((nbrImplication[0].type_2.peuEngage.peuDirect) + 1)
+									initialPpAngles[0].peuDirectInitialAngle.second += angleInterval
+									
+									drawPp(ctx6, (dim/2 - 2*(spaceBetween)), nbrDetails[0].type_2.peuDirect, initialPpAngles[0].peuDirectInitialAngle.second, ppRadius, lightBorder, colors.greenThird, items[i].niveau_implication)
+								}else {
+
+									angleInterval = ((nbrDetails[0].type_2.nbr/items.length)*2*Math.PI)/((nbrImplication[0].type_2.peuEngage.indirect) + 1)
+									initialPpAngles[0].indirectInitialAngle.second += angleInterval
+									
+									drawPp(ctx6, (dim/2 - spaceBetween), nbrDetails[0].type_2.indirect, initialPpAngles[0].indirectInitialAngle.second, ppRadius, lightBorder, colors.greenFourth, items[i].niveau_implication)
+								}
+							}else {
+
+								if(items[i].niveau_influence == 1) {
+
+									angleInterval = ((nbrDetails[0].type_3.nbr/items.length)*2*Math.PI)/((nbrImplication[0].type_3.peuEngage.direct) + 1)
+									initialPpAngles[0].directInitialAngle.third += angleInterval
+									
+									drawPp(ctx6, (dim/2 - 4*(spaceBetween)), nbrDetails[0].type_3.direct, initialPpAngles[0].directInitialAngle.third, ppRadius, lightBorder, colors.yellowFirst, items[i].niveau_implication)
+								}else if(items[i].niveau_influence == 2) {
+
+									angleInterval = ((nbrDetails[0].type_3.nbr/items.length)*2*Math.PI)/((nbrImplication[0].type_3.peuEngage.assezDirect) + 1)
+									initialPpAngles[0].assezDiectInitialAngle.third += angleInterval
+									
+									drawPp(ctx6, (dim/2 - 3*(spaceBetween)), nbrDetails[0].type_3.assezDirect, initialPpAngles[0].assezDiectInitialAngle.third, ppRadius, lightBorder, colors.yellowSecond, items[i].niveau_implication)
+								}else if(items[i].niveau_influence == 3) {
+
+									angleInterval = ((nbrDetails[0].type_3.nbr/items.length)*2*Math.PI)/((nbrImplication[0].type_3.peuEngage.peuDirect) + 1)
+									initialPpAngles[0].peuDirectInitialAngle.third += angleInterval
+									
+									drawPp(ctx6, (dim/2 - 2*(spaceBetween)), nbrDetails[0].type_3.peuDirect, initialPpAngles[0].peuDirectInitialAngle.third, ppRadius, lightBorder, colors.yellowThird, items[i].niveau_implication)
+								}else {
+
+									angleInterval = ((nbrDetails[0].type_3.nbr/items.length)*2*Math.PI)/((nbrImplication[0].type_3.peuEngage.indirect) + 1)
+									initialPpAngles[0].indirectInitialAngle.third += angleInterval
+									
+									drawPp(ctx6, (dim/2 - spaceBetween), nbrDetails[0].type_3.indirect, initialPpAngles[0].indirectInitialAngle.third, ppRadius, lightBorder, colors.yellowFourth, items[i].niveau_implication)
+								}
+								// console.log('ahaha')
+							}
+						}
+					}
+					init()
+				}
+			function drawZone7() {
+
+				// Les Varaibles
+					let canvas = document.getElementById("canvas7") // Le canvas
+					let ctx7 = canvas.getContext("2d") // Le contexte de dessin
+					let ppRadius = dim/30
+					let spaceBetween = ((dim/2) - ((dim/30) + (dim/10) + (dim/200) + ((dim*3)/100)))/4 // Espace entre les cercles annexes sur lesquelles vont se placer les parties prenantes
+				// Dessin des zones
+					initGlobalDraw(ctx7) // Squelette du diagramme (Les trois premiers cercles)
+					drawCircle(ctx7, dim/2, dim/2, (dim/2 - 1*(spaceBetween)), lightBorder, colorTemplate[0].grayScale.fifth, false, false)
+					drawCircle(ctx7, dim/2, dim/2, (dim/2 - 2*(spaceBetween)), lightBorder, colorTemplate[0].grayScale.fifth, false, false)
+					drawCircle(ctx7, dim/2, dim/2, (dim/2 - 3*(spaceBetween)), lightBorder, colorTemplate[0].grayScale.fifth, false, false)
+					drawCircle(ctx7, dim/2, dim/2, (dim/2 - 4*(spaceBetween)), lightBorder, colorTemplate[0].grayScale.fifth, false, false)
+
+				// Dessin des parties prenantes dans les zones requises
+					for (var i=0; i<items.length; i++) {
+
+						ppName = items[i].nom.toUpperCase()
+						
+						if(items[i].niveau_implication == 3) {
+
+							if (items[i].type == 1) {
+
+								if(items[i].niveau_influence == 1) {
+
+									angleInterval = ((nbrDetails[0].type_1.nbr/items.length)*2*Math.PI)/((nbrImplication[0].type_1.indecis.direct) + 1)
+									initialPpAngles[0].directInitialAngle.first += angleInterval
+
+									drawPp(ctx7, (dim/2 - 4*(spaceBetween)), nbrDetails[0].type_1.direct, initialPpAngles[0].directInitialAngle.first, ppRadius, lightBorder, colors.redFisrt, items[i].niveau_implication)
+								}else if(items[i].niveau_influence == 2) {
+
+									angleInterval = ((nbrDetails[0].type_1.nbr/items.length)*2*Math.PI)/((nbrImplication[0].type_1.indecis.assezDirect) + 1)
+									initialPpAngles[0].assezDiectInitialAngle.first += angleInterval
+									
+									drawPp(ctx7, (dim/2 - 3*(spaceBetween)), nbrDetails[0].type_1.assezDirect, initialPpAngles[0].assezDiectInitialAngle.first, ppRadius, lightBorder, colors.redSecond, items[i].niveau_implication)
+								}else if(items[i].niveau_influence == 3) {
+
+									angleInterval = ((nbrDetails[0].type_1.nbr/items.length)*2*Math.PI)/((nbrImplication[0].type_1.indecis.peuDirect) + 1)
+									initialPpAngles[0].peuDirectInitialAngle.first += angleInterval
+									
+									drawPp(ctx7, (dim/2 - 2*(spaceBetween)), nbrDetails[0].type_1.peuDirect, initialPpAngles[0].peuDirectInitialAngle.first, ppRadius, lightBorder, colors.redThird, items[i].niveau_implication)
+								}else {
+
+									angleInterval = ((nbrDetails[0].type_1.nbr/items.length)*2*Math.PI)/((nbrImplication[0].type_1.indecis.indirect) + 1)
+									initialPpAngles[0].indirectInitialAngle.first += angleInterval
+									
+									drawPp(ctx7, (dim/2 - spaceBetween), nbrDetails[0].type_1.indirect, initialPpAngles[0].indirectInitialAngle.first, ppRadius, lightBorder, colors.redFourth, items[i].niveau_implication)
+								}
+							}else if (items[i].type == 2) {
+
+								if(items[i].niveau_influence == 1) {
+
+									angleInterval = ((nbrDetails[0].type_2.nbr/items.length)*2*Math.PI)/((nbrImplication[0].type_2.indecis.direct) + 1)
+									initialPpAngles[0].directInitialAngle.second += angleInterval
+									
+									drawPp(ctx7, (dim/2 - 4*(spaceBetween)), nbrDetails[0].type_2.direct, initialPpAngles[0].directInitialAngle.second, ppRadius, lightBorder, colors.greenFisrt, items[i].niveau_implication)
+								}else if(items[i].niveau_influence == 2) {
+
+									angleInterval = ((nbrDetails[0].type_2.nbr/items.length)*2*Math.PI)/((nbrImplication[0].type_2.indecis.assezDirect) + 1)
+									initialPpAngles[0].assezDiectInitialAngle.second += angleInterval
+									
+									drawPp(ctx7, (dim/2 - 3*(spaceBetween)), nbrDetails[0].type_2.assezDirect, initialPpAngles[0].assezDiectInitialAngle.second, ppRadius, lightBorder, colors.greenSecond, items[i].niveau_implication)
+								}else if(items[i].niveau_influence == 3) {
+
+									angleInterval = ((nbrDetails[0].type_2.nbr/items.length)*2*Math.PI)/((nbrImplication[0].type_2.indecis.peuDirect) + 1)
+									initialPpAngles[0].peuDirectInitialAngle.second += angleInterval
+									
+									drawPp(ctx7, (dim/2 - 2*(spaceBetween)), nbrDetails[0].type_2.peuDirect, initialPpAngles[0].peuDirectInitialAngle.second, ppRadius, lightBorder, colors.greenThird, items[i].niveau_implication)
+								}else {
+
+									angleInterval = ((nbrDetails[0].type_2.nbr/items.length)*2*Math.PI)/((nbrImplication[0].type_2.indecis.indirect) + 1)
+									initialPpAngles[0].indirectInitialAngle.second += angleInterval
+									
+									drawPp(ctx7, (dim/2 - spaceBetween), nbrDetails[0].type_2.indirect, initialPpAngles[0].indirectInitialAngle.second, ppRadius, lightBorder, colors.greenFourth, items[i].niveau_implication)
+								}
+							}else {
+
+								if(items[i].niveau_influence == 1) {
+
+									angleInterval = ((nbrDetails[0].type_3.nbr/items.length)*2*Math.PI)/((nbrImplication[0].type_3.indecis.direct) + 1)
+									initialPpAngles[0].directInitialAngle.third += angleInterval
+									
+									drawPp(ctx7, (dim/2 - 4*(spaceBetween)), nbrDetails[0].type_3.direct, initialPpAngles[0].directInitialAngle.third, ppRadius, lightBorder, colors.yellowFirst, items[i].niveau_implication)
+								}else if(items[i].niveau_influence == 2) {
+
+									angleInterval = ((nbrDetails[0].type_3.nbr/items.length)*2*Math.PI)/((nbrImplication[0].type_3.indecis.assezDirect) + 1)
+									initialPpAngles[0].assezDiectInitialAngle.third += angleInterval
+									
+									drawPp(ctx7, (dim/2 - 3*(spaceBetween)), nbrDetails[0].type_3.assezDirect, initialPpAngles[0].assezDiectInitialAngle.third, ppRadius, lightBorder, colors.yellowSecond, items[i].niveau_implication)
+								}else if(items[i].niveau_influence == 3) {
+
+									angleInterval = ((nbrDetails[0].type_3.nbr/items.length)*2*Math.PI)/((nbrImplication[0].type_3.indecis.peuDirect) + 1)
+									initialPpAngles[0].peuDirectInitialAngle.third += angleInterval
+									
+									drawPp(ctx7, (dim/2 - 2*(spaceBetween)), nbrDetails[0].type_3.peuDirect, initialPpAngles[0].peuDirectInitialAngle.third, ppRadius, lightBorder, colors.yellowThird, items[i].niveau_implication)
+								}else {
+
+									angleInterval = ((nbrDetails[0].type_3.nbr/items.length)*2*Math.PI)/((nbrImplication[0].type_3.indecis.indirect) + 1)
+									initialPpAngles[0].indirectInitialAngle.third += angleInterval
+									
+									drawPp(ctx7, (dim/2 - spaceBetween), nbrDetails[0].type_3.indirect, initialPpAngles[0].indirectInitialAngle.third, ppRadius, lightBorder, colors.yellowFourth, items[i].niveau_implication)
+								}
+								// console.log('ahaha')
+							}
+						}
+					}
+					init()
+				}
+			function drawLastZone() {
+
+				// Les Varaibles
+					let canvas = document.getElementById("canvas8") // Le canvas
+					let ctx = canvas.getContext("2d") // Le contexte de dessin
+					let ppRadius = dim/30
+					let spaceBetween = ((dim/2) - ((dim/30) + (dim/10) + (dim/200) + ((dim*3)/100)))/4 // Espace entre les cercles annexes sur lesquelles vont se placer les parties prenantes
+
+				// Dessin des zones
+					initGlobalDraw(ctx) // Squelette du diagramme (Les trois premiers cercles)
+					drawCircle(ctx, dim/2, dim/2, (dim/2 - 1*(spaceBetween)), lightBorder, colorTemplate[0].grayScale.fifth, false, false)
+					drawCircle(ctx, dim/2, dim/2, (dim/2 - 2*(spaceBetween)), lightBorder, colorTemplate[0].grayScale.fifth, false, false)
+					drawCircle(ctx, dim/2, dim/2, (dim/2 - 3*(spaceBetween)), lightBorder, colorTemplate[0].grayScale.fifth, false, false)
+					drawCircle(ctx, dim/2, dim/2, (dim/2 - 4*(spaceBetween)), lightBorder, colorTemplate[0].grayScale.fifth, false, false)
+
+				// Dessin des parties prenantes dans les zones requises
+					for (var i=0; i<items.length; i++) {
+
+						ppName = items[i].nom.toUpperCase()
+						
+						if (items[i].type == 1) {
+
+							if(items[i].niveau_influence == 1) {
+
+								angleInterval = ((nbrDetails[0].type_1.nbr/items.length)*2*Math.PI)/((nbrDetails[0].type_1.direct) + 1)
+								initialPpAngles[0].directInitialAngle.first += angleInterval
+
+								drawPp(ctx, (dim/2 - 4*(spaceBetween)), nbrDetails[0].type_1.direct, initialPpAngles[0].directInitialAngle.first, ppRadius, lightBorder, colors.redFisrt, items[i].niveau_implication)
+							}else if(items[i].niveau_influence == 2) {
+
+								angleInterval = ((nbrDetails[0].type_1.nbr/items.length)*2*Math.PI)/((nbrDetails[0].type_1.assezDirect) + 1)
+								initialPpAngles[0].assezDiectInitialAngle.first += angleInterval
+								
+								drawPp(ctx, (dim/2 - 3*(spaceBetween)), nbrDetails[0].type_1.assezDirect, initialPpAngles[0].assezDiectInitialAngle.first, ppRadius, lightBorder, colors.redSecond, items[i].niveau_implication)
+							}else if(items[i].niveau_influence == 3) {
+
+								angleInterval = ((nbrDetails[0].type_1.nbr/items.length)*2*Math.PI)/((nbrDetails[0].type_1.peuDirect) + 1)
+								initialPpAngles[0].peuDirectInitialAngle.first += angleInterval
+								
+								drawPp(ctx, (dim/2 - 2*(spaceBetween)), nbrDetails[0].type_1.peuDirect, initialPpAngles[0].peuDirectInitialAngle.first, ppRadius, lightBorder, colors.redThird, items[i].niveau_implication)
+							}else {
+
+								angleInterval = ((nbrDetails[0].type_1.nbr/items.length)*2*Math.PI)/((nbrDetails[0].type_1.indirect) + 1)
+								initialPpAngles[0].indirectInitialAngle.first += angleInterval
+								
+								drawPp(ctx, (dim/2 - spaceBetween), nbrDetails[0].type_1.indirect, initialPpAngles[0].indirectInitialAngle.first, ppRadius, lightBorder, colors.redFourth, items[i].niveau_implication)
+							}
+						}else if (items[i].type == 2) {
+
+							if(items[i].niveau_influence == 1) {
+
+								angleInterval = ((nbrDetails[0].type_2.nbr/items.length)*2*Math.PI)/((nbrDetails[0].type_2.direct) + 1)
+								initialPpAngles[0].directInitialAngle.second += angleInterval
+								
+								drawPp(ctx, (dim/2 - 4*(spaceBetween)), nbrDetails[0].type_2.direct, initialPpAngles[0].directInitialAngle.second, ppRadius, lightBorder, colors.greenFisrt, items[i].niveau_implication)
+							}else if(items[i].niveau_influence == 2) {
+
+								angleInterval = ((nbrDetails[0].type_2.nbr/items.length)*2*Math.PI)/((nbrDetails[0].type_2.assezDirect) + 1)
+								initialPpAngles[0].assezDiectInitialAngle.second += angleInterval
+								
+								drawPp(ctx, (dim/2 - 3*(spaceBetween)), nbrDetails[0].type_2.assezDirect, initialPpAngles[0].assezDiectInitialAngle.second, ppRadius, lightBorder, colors.greenSecond, items[i].niveau_implication)
+							}else if(items[i].niveau_influence == 3) {
+
+								angleInterval = ((nbrDetails[0].type_2.nbr/items.length)*2*Math.PI)/((nbrDetails[0].type_2.peuDirect) + 1)
+								initialPpAngles[0].peuDirectInitialAngle.second += angleInterval
+								
+								drawPp(ctx, (dim/2 - 2*(spaceBetween)), nbrDetails[0].type_2.peuDirect, initialPpAngles[0].peuDirectInitialAngle.second, ppRadius, lightBorder, colors.greenThird, items[i].niveau_implication)
+							}else {
+
+								angleInterval = ((nbrDetails[0].type_2.nbr/items.length)*2*Math.PI)/((nbrDetails[0].type_2.indirect) + 1)
+								initialPpAngles[0].indirectInitialAngle.second += angleInterval
+								
+								drawPp(ctx, (dim/2 - spaceBetween), nbrDetails[0].type_2.indirect, initialPpAngles[0].indirectInitialAngle.second, ppRadius, lightBorder, colors.greenFourth, items[i].niveau_implication)
+							}
+						}else {
+
+							if(items[i].niveau_influence == 1) {
+
+								angleInterval = ((nbrDetails[0].type_3.nbr/items.length)*2*Math.PI)/((nbrDetails[0].type_3.direct) + 1)
+								initialPpAngles[0].directInitialAngle.third += angleInterval
+								
+								drawPp(ctx, (dim/2 - 4*(spaceBetween)), nbrDetails[0].type_3.direct, initialPpAngles[0].directInitialAngle.third, ppRadius, lightBorder, colors.yellowFirst, items[i].niveau_implication)
+							}else if(items[i].niveau_influence == 2) {
+
+								angleInterval = ((nbrDetails[0].type_3.nbr/items.length)*2*Math.PI)/((nbrDetails[0].type_3.assezDirect) + 1)
+								initialPpAngles[0].assezDiectInitialAngle.third += angleInterval
+								
+								drawPp(ctx, (dim/2 - 3*(spaceBetween)), nbrDetails[0].type_3.assezDirect, initialPpAngles[0].assezDiectInitialAngle.third, ppRadius, lightBorder, colors.yellowSecond, items[i].niveau_implication)
+							}else if(items[i].niveau_influence == 3) {
+
+								angleInterval = ((nbrDetails[0].type_3.nbr/items.length)*2*Math.PI)/((nbrDetails[0].type_3.peuDirect) + 1)
+								initialPpAngles[0].peuDirectInitialAngle.third += angleInterval
+								
+								drawPp(ctx, (dim/2 - 2*(spaceBetween)), nbrDetails[0].type_3.peuDirect, initialPpAngles[0].peuDirectInitialAngle.third, ppRadius, lightBorder, colors.yellowThird, items[i].niveau_implication)
+							}else {
+
+								angleInterval = ((nbrDetails[0].type_3.nbr/items.length)*2*Math.PI)/((nbrDetails[0].type_3.indirect) + 1)
+								initialPpAngles[0].indirectInitialAngle.third += angleInterval
+								
+								drawPp(ctx, (dim/2 - spaceBetween), nbrDetails[0].type_3.indirect, initialPpAngles[0].indirectInitialAngle.third, ppRadius, lightBorder, colors.yellowFourth, items[i].niveau_implication)
+							}
+							// console.log('ahaha')
+						}
+					}}
+			
+			// Fonction utiles
+				function drawCircle(ctx, x, y, r, lw, color, fill=true, shadow=false) { // Fonction qui permet de dessiner un cercle
+
+					let circle = new Path2D()
+
+					if(shadow) {
+
+						ctx.shadowOffsetX = 2
+						ctx.shadowOffsetY = 2
+						ctx.shadowBlur = 5
+						ctx.shadowColor = '#111'
+					}
+					ctx.lineWidth = lw
+					ctx.strokeStyle = color
+					ctx.fillStyle = color
+
+					circle.arc(x, y, r, 0, 2*Math.PI)
+					if(fill) { ctx.fill(circle); }else { ctx.stroke(circle) }}
+				function writeText(ctx, x, y, r, color, text, maxW, shadow=false) {
+
+					// let fz = 2*(r/text.length);
+					let fz = canvas5.height/100;
+
+					ctx.beginPath()
+					if(shadow) {
+
+						ctx.shadowOffsetX = 2
+						ctx.shadowOffsetY = 2
+						ctx.shadowBlur = 5
+						ctx.shadowColor = '#111'
+					}
+					ctx.fillStyle = color
+					ctx.font = fz+'pt Heveltica'
+					ctx.textAlign = 'center'
+					ctx.textBaseline = 'middle'
+
+					ctx.fillText(text, x, y, maxW)}
+				function drawPp(ctx, currentRadius, totalItem, angle, r, lw, firstColor, implication) {
+
+					centerX = (dim/2) + (currentRadius*Math.cos(angle))
+					centerY = (dim/2) + (currentRadius*Math.sin(angle))
+					ecartX = centerX
+					ecartY = centerY - r
+
+					setImplicationDetails(implication)
+					drawCircle(ctx, centerX, centerY, r, lw, firstColor, true, true)
+					writeText(ctx, centerX, centerY, r/2, '#fff', ppName, 3*(r/2))
+					
+					drawCircle(ctx, ecartX, ecartY, r/2, lw, '#555')
+					writeText(ctx, ecartX, ecartY, r/2, '#fff', implicationText, r)}
+				function initGlobalDraw(ctx) { // Dessin des Premiers cercles et du noyaux
+
+					drawZone(ctx, dim/2, colorTemplate[0].grayScale.second, 0, secondInitialAngle) // Zone PPNL
+					drawZone(ctx, dim/2, colorTemplate[0].grayScale.fourth, secondInitialAngle, thirdInitialAngle) // Zone PPI
+					drawZone(ctx, dim/2, colorTemplate[0].grayScale.sixth, thirdInitialAngle, ((nbrDetails[0].type_1.nbr + nbrDetails[0].type_2.nbr + nbrDetails[0].type_3.nbr) / items.length)*2*Math.PI) // Zone PTF
+
+					drawCircle(ctx, dim/2, dim/2, dim/40, simpleBorder, '#990000')
+					drawCircle(ctx, dim/2, dim/2, dim/22, bigBorder, '#990000', false)
+					drawCircle(ctx, dim/2, dim/2, dim/15, bigBorder, '#990000', false)}
+				function initDraw(ctx) { // Dessin des Premiers cercles et du noyaux
+
+					drawZone(ctx, dim/2, colorTemplate[0].grayScale.second, 0, secondInitialAngle) // Zone PPNL
+					drawZone(ctx, dim/2, colorTemplate[0].grayScale.fourth, secondInitialAngle, thirdInitialAngle) // Zone PPI
+					drawZone(ctx, dim/2, colorTemplate[0].grayScale.sixth, thirdInitialAngle, ((nbrDetails[0].type_1.nbr + nbrDetails[0].type_2.nbr + nbrDetails[0].type_3.nbr) / items.length)*2*Math.PI) // Zone PTF
+
+					drawCircle(ctx, dim/2, dim/2, dim/10, simpleBorder, '#990000')
+					drawCircle(ctx, dim/2, dim/2, dim/8.5, 2*bigBorder, '#990000', false)
+					drawCircle(ctx, dim/2, dim/2, dim/7, bigBorder, '#990000', false)}
+				function init() {
+					ppName = ''
+					arcLength = 0
+					rayon = 0
+					angleInterval = 0
+					tmpAngle = 0
+					centerX = 0
+					centerY = 0
+					ecartX = 0
+					ecartY = 0
+					initialPpAngles = [
+						{
+							'directInitialAngle': {
+								'first': 0,
+								'second': secondInitialAngle,
+								'third': thirdInitialAngle
+							},
+							'assezDiectInitialAngle': {
+								'first': 0,
+								'second': secondInitialAngle,
+								'third': thirdInitialAngle
+							},
+							'peuDirectInitialAngle': {
+								'first': 0,
+								'second': secondInitialAngle,
+								'third': thirdInitialAngle
+							},
+							'indirectInitialAngle': {
+								'first': 0,
+								'second': secondInitialAngle,
+								'third': thirdInitialAngle
+							}
+						}]}
+				function setImplicationDetails(implication) {
+					
+					if(implication == 1) {
+						implicationColor = colorTemplate[0].niveauImplication.engage;
+						implicationText = colorTemplate[0].implicationText.engage
+
+					}else if(implication == 2) {
+						implicationColor = colorTemplate[0].niveauImplication.peuEngage
+						implicationText = colorTemplate[0].implicationText.peuEngage
+					}else {
+						implicationColor = colorTemplate[0].niveauImplication.indecis
+						implicationText = colorTemplate[0].implicationText.indecis
+					}}
+				function drawZone(ctx, r, color, startAngle, endAngle, fill=true) { // Fonction servant à dessiner les différentes zones correspondantes aux types de parties prenantes
+
+					let zone = new Path2D()
+
+					zone.moveTo(r, r)
+					zone.arc(r, r, r, startAngle, endAngle )
+					zone.lineTo(r, r)
+
+					ctx.fillStyle = color
+
+					if(fill) {
+
+						ctx.fill(zone)
+					}else {
+
+						ctx.stroke(zone)
+					}}
+
+	</script>
+</html>

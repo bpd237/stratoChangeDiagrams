@@ -1,0 +1,98 @@
+
+		body {
+			width: 100vw; height: 100vh;
+			overflow: hidden;}
+		.red-first {background-color: #6e0505}
+		.red-fourth {background-color: #f76060}
+		.green-first {background-color: #014508}
+		.green-fourth {background-color: #8ade92}
+		.yellow-first {background-color: #662f0c}
+		.yellow-fourth {background-color: #cf8557}
+		.hide {display: none !important}
+		.c-active {display: inline-block !important;}
+		.c-container {
+			width: 100vw;
+			height: 100vh;
+			display: flex;
+			overflow: hidden;}
+		.c-content {display: inline-block;}
+		.c-title {
+			position: absolute;
+			top: 2vh; left: 0;
+			display: inline-block;
+			padding: 1%;
+			background-color: #990000;
+			box-shadow: 1px 1px 5px #aaa;
+			text-align: center;
+			font-style: italic;
+			font-weight: lighter;
+			font-size: 14px;
+			color: #fff;}
+		.c-content-container {width: 80vw;height: 100vh;}
+		.c-content-legend {
+			width: 20vw;
+			height: 100vh;
+			box-shadow: -5px 0 5px #ccc;
+			background-color: #fff;
+			z-index: 999999999;}
+		.special-title {
+			background-color: #990000;
+			margin: 0;
+			padding: 12% 5%;
+			color: #fff;
+			text-transform: uppercase;
+			text-align: center;}
+		.elt-legend {
+			margin: 5% 0;
+			padding-left: 5%;
+			display: flex;}
+		.elt-representation {
+			display: inline-block;
+			width: 40px; height: 40px;
+			border-radius: 50%;
+			color: #fff;
+			box-shadow: 1px 1px 3px #111;
+			font-size: 11px;
+			line-height: 40px;
+			text-align: center;}
+		.elt-text {
+			display: inline-block;
+			margin-left: 5%;
+			font-size: 12px;
+			line-height: 40px;}
+		.up {
+			display: inline-block;
+			background: gray;
+			width: 20px; height: 20px;
+			font-size: 15px;
+			line-height: 20px;
+			text-align: center;
+			color: #fff;
+			box-shadow: 1px 1px 2px #111;
+			border-radius: 50%;
+			position: relative;
+			right: 30px; bottom: 10px;}
+		canvas {
+			margin: auto;
+			background-color: #eee;
+			border: solid 1px #ccc;
+			border-radius: 50%;
+			box-shadow: 1px 1px 15px #888;
+			cursor: pointer;}
+		.left, .right {
+			display: block;
+			font-size: 10px;
+			line-height: 10px;
+			padding: 15px;
+			box-shadow: 1px 2px 5px #111;
+			position: absolute;
+			top: 50vh;
+			background: #990000;
+			color: #fff;}
+		.left:hover, .right:hover {
+			box-shadow: 2px 3px 15px #ccc;
+			cursor: pointer;
+			color : #fff;
+			background-color: #e90;}
+		.left {left: 0;}
+		.right {right: 20vw; /*z-index: -99*/}

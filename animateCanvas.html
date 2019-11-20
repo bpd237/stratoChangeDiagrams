@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Animate Canvas</title>
+	</head>
+	<style type="text/css">
+		body {
+			width: 100vw; height: 100vh;
+		}
+		canvas {
+			width: 50vw; height: 50vh;
+			box-shadow: 1px 1px 3px #111 inset;
+			background-color: #eee;
+			margin-left: 25vw;
+			margin-top: 25vh;
+		}
+	</style>
+	<body>
+		<canvas id="c1">Your navigator doesn't support canvas element</canvas>
+
+		<script type="text/javascript">
+			
+			
+			let canvas = document.getElementById('c1')
+			let ctx = canvas.getContext('2d')
+
+			let canvasHeight = canvas.height;
+			let canvasWidth = canvas.width;
+
+			let canvasCenterX = canvasWidth/2
+			let canvasCenterY = canvasHeight/2
+
+			let requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+
+ 			
+			drawCircle(canvasCenterX, canvasCenterY, canvasWidth/5, 2, 0, 2*Math.PI)
+
+ 			function drawCircle(x, y, r, lw, startAngle, endAngle) {
+
+ 				ctx.clearRect(0, 0, canvasWidth, canvasHeight)
+ 				
+ 				ctx.fillStyle = "#e90"
+ 				ctx.lineWidth = lw
+ 				ctx.strokeStyle = "#fff"
+
+ 				ctx.beginPath()
+ 				ctx.arc(x, y, r, startAngle, endAngle)
+ 				ctx.closePath()
+
+ 				ctx.fill();
+
+ 				requestAnimationFrame(function() {
+ 					drawCircle(x, y, r, lw, startAngle, endAngle)
+ 				})
+ 			}
+		</script>
+	</body>
+</html>

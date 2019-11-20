@@ -1,0 +1,142 @@
+[
+  {
+    "id": 0,
+    "nom": "duis",
+    "type": 1,
+    "niveau_influence": 4,
+    "niveau_implication": 2
+  },
+  {
+    "id": 1,
+    "nom": "esse",
+    "type": 3,
+    "niveau_influence": 3,
+    "niveau_implication": 1
+  },
+  {
+    "id": 2,
+    "nom": "id",
+    "type": 2,
+    "niveau_influence": 1,
+    "niveau_implication": 2
+  },
+  {
+    "id": 3,
+    "nom": "laborum",
+    "type": 3,
+    "niveau_influence": 4,
+    "niveau_implication": 2
+  },
+  {
+    "id": 4,
+    "nom": "ad",
+    "type": 1,
+    "niveau_influence": 2,
+    "niveau_implication": 3
+  },
+  {
+    "id": 5,
+    "nom": "dolore",
+    "type": 1,
+    "niveau_influence": 2,
+    "niveau_implication": 2
+  },
+  {
+    "id": 6,
+    "nom": "commodo",
+    "type": 2,
+    "niveau_influence": 2,
+    "niveau_implication": 3
+  },
+  {
+    "id": 7,
+    "nom": "aute",
+    "type": 3,
+    "niveau_influence": 1,
+    "niveau_implication": 2
+  },
+  {
+    "id": 8,
+    "nom": "reprehenderit",
+    "type": 1,
+    "niveau_influence": 2,
+    "niveau_implication": 3
+  },
+  {
+    "id": 9,
+    "nom": "aliquip",
+    "type": 1,
+    "niveau_influence": 4,
+    "niveau_implication": 2
+  },
+  {
+    "id": 10,
+    "nom": "ea",
+    "type": 1,
+    "niveau_influence": 1,
+    "niveau_implication": 2
+  },
+  {
+    "id": 11,
+    "nom": "excepteur",
+    "type": 1,
+    "niveau_influence": 4,
+    "niveau_implication": 3
+  },
+  {
+    "id": 12,
+    "nom": "irure",
+    "type": 1,
+    "niveau_influence": 4,
+    "niveau_implication": 3
+  },
+  {
+    "id": 13,
+    "nom": "ea",
+    "type": 1,
+    "niveau_influence": 3,
+    "niveau_implication": 3
+  },
+  {
+    "id": 14,
+    "nom": "exercitation",
+    "type": 3,
+    "niveau_influence": 1,
+    "niveau_implication": 3
+  },
+  {
+    "id": 15,
+    "nom": "nulla",
+    "type": 2,
+    "niveau_influence": 4,
+    "niveau_implication": 3
+  },
+  {
+    "id": 16,
+    "nom": "deserunt",
+    "type": 1,
+    "niveau_influence": 1,
+    "niveau_implication": 2
+  },
+  {
+    "id": 17,
+    "nom": "consectetur",
+    "type": 1,
+    "niveau_influence": 3,
+    "niveau_implication": 2
+  },
+  {
+    "id": 18,
+    "nom": "anim",
+    "type": 2,
+    "niveau_influence": 2,
+    "niveau_implication": 1
+  },
+  {
+    "id": 19,
+    "nom": "id",
+    "type": 1,
+    "niveau_influence": 1,
+    "niveau_implication": 3
+  }
+]
